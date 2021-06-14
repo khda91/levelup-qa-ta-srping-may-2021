@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Simple Calculator Suite">
+
+  <test name="Add and Subtract tests">
+    <classes>
+      <class name="ru.levelup.at.build.tools.CalculatorSimpleTest"/>
+      <class name="ru.levelup.at.build.tools.CalculatorSimple1Test"/>
+      <class name="ru.levelup.at.build.tools.CalculatorSimple2Test"/>
+    </classes>
+  </test>
+
+</suite>

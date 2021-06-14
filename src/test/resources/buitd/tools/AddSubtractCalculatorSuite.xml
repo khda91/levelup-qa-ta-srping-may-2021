@@ -1,0 +1,28 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<!-- Before Suite -->
+<suite name="Add and Subtract Calculator Suite">
+
+  <!-- Before Test -->
+  <test name="Add tests">
+    <classes>
+      <!-- Before Class -->
+      <class name="ru.levelup.at.build.tools.CalculatorAddTest">
+        <!-- Before Method-->
+        <!-- Test -->
+        <!-- After Method-->
+      </class>
+      <!-- After Class -->
+    </classes>
+  </test>
+  <!-- After Test -->
+
+  <!-- Before Test -->
+  <test name="Subtract tests">
+    <classes>
+      <class name="ru.levelup.at.build.tools.CalculatorSubtractTest"/>
+    </classes>
+  </test>
+  <!-- After Test -->
+
+</suite>
+<!-- After Suite -->

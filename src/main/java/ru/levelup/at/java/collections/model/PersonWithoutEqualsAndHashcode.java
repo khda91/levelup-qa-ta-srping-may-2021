@@ -28,9 +28,9 @@ public class PersonWithoutEqualsAndHashcode {
 
     @Override
     public String toString() {
-        return "PersonWithoutEqualsAndHashcode{" +
-            "name='" + name + '\'' +
-            ", age=" + age +
-            '}';
+        return "PersonWithoutEqualsAndHashcode{"
+            + "name='" + name + '\''
+            + ", age=" + age
+            + '}';
     }
 }
