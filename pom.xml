@@ -16,11 +16,64 @@
     <checkstyle.version>8.42</checkstyle.version>
     <testng.version>7.4.0</testng.version>
     <jcommander.version>1.81</jcommander.version>
+    <selenium-java.version>3.141.59</selenium-java.version>
+    <assertj-core.version>3.19.0</assertj-core.version>
+    <webdrivermanager.version>4.4.3</webdrivermanager.version>
+    <slf4j-api.version>1.7.30</slf4j-api.version>
 
     <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
     <maven-checkstyle-plugin.version>3.1.2</maven-checkstyle-plugin.version>
     <maven-surefire-plugin.version>3.0.0-M5</maven-surefire-plugin.version>
   </properties>
+
+  <profiles>
+    <profile>
+      <id>simple-calculator-suite</id>
+      <activation>
+        <activeByDefault>false</activeByDefault>
+      </activation>
+
+      <properties>
+        <suite.file.name>${project.basedir}/src/test/resources/buitd/tools/SimpleCalculatorSuite.xml</suite.file.name>
+      </properties>
+
+      <!--<dependencies></dependencies>-->
+      <!--<build></build>-->
+    </profile>
+
+    <profile>
+      <id>add-subtract-calculator-suite</id>
+      <activation>
+        <activeByDefault>false</activeByDefault>
+      </activation>
+
+      <properties>
+        <suite.file.name>${project.basedir}/src/test/resources/buitd/tools/AddSubtractCalculatorSuite.xml</suite.file.name>
+      </properties>
+    </profile>
+
+    <profile>
+      <id>simple-calculator-listener-suite</id>
+      <activation>
+        <activeByDefault>false</activeByDefault>
+      </activation>
+
+      <properties>
+        <suite.file.name>${project.basedir}/src/test/resources/buitd/tools/SimpleCalculatorListenerSuite.xml</suite.file.name>
+      </properties>
+    </profile>
+
+    <profile>
+      <id>different-browsers-selenium-suite</id>
+      <activation>
+        <activeByDefault>false</activeByDefault>
+      </activation>
+
+      <properties>
+        <suite.file.name>${project.basedir}/src/test/resources/selenium/DifferentBrowsersSeleniumSuite.xml</suite.file.name>
+      </properties>
+    </profile>
+  </profiles>
 
   <dependencies>
     <dependency>
@@ -41,6 +94,31 @@
       <artifactId>jcommander</artifactId>
       <version>${jcommander.version}</version>
     </dependency>
+
+    <dependency>
+      <groupId>org.seleniumhq.selenium</groupId>
+      <artifactId>selenium-java</artifactId>
+      <version>${selenium-java.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.assertj</groupId>
+      <artifactId>assertj-core</artifactId>
+      <version>${assertj-core.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>io.github.bonigarcia</groupId>
+      <artifactId>webdrivermanager</artifactId>
+      <version>${webdrivermanager.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>${slf4j-api.version}</version>
+    </dependency>
+
 
   </dependencies>
 

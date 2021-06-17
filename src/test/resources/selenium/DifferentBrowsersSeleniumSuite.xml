@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Different Browsers Selenium Suite">
+
+  <test name="Different browsers">
+    <classes>
+      <class name="ru.levelup.at.selenium.YandexMarketSimpleTest"/>
+    </classes>
+  </test>
+
+</suite>
