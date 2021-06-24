@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Multi Threading">
+
+  <test name="Multi Threading">
+    <classes>
+      <class name="ru.levelup.at.selenium.multithreading.UserBugRedRegistrationTest"/>
+      <class name="ru.levelup.at.selenium.multithreading.YandexMarketCompareProductTest"/>
+    </classes>
+  </test>
+
+</suite>

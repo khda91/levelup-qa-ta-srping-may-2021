@@ -24,6 +24,7 @@
     <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
     <maven-checkstyle-plugin.version>3.1.2</maven-checkstyle-plugin.version>
     <maven-surefire-plugin.version>3.0.0-M5</maven-surefire-plugin.version>
+    <javafaker.version>1.0.2</javafaker.version>
   </properties>
 
   <profiles>
@@ -73,6 +74,17 @@
         <suite.file.name>${project.basedir}/src/test/resources/selenium/DifferentBrowsersSeleniumSuite.xml</suite.file.name>
       </properties>
     </profile>
+
+    <profile>
+      <id>multi-threading-selenium-suite</id>
+      <activation>
+        <activeByDefault>false</activeByDefault>
+      </activation>
+
+      <properties>
+        <suite.file.name>${project.basedir}/src/test/resources/selenium/MultiThreadingSeleniumSuite.xml</suite.file.name>
+      </properties>
+    </profile>
   </profiles>
 
   <dependencies>
@@ -119,7 +131,11 @@
       <version>${slf4j-api.version}</version>
     </dependency>
 
-
+    <dependency>
+      <groupId>com.github.javafaker</groupId>
+      <artifactId>javafaker</artifactId>
+      <version>${javafaker.version}</version>
+    </dependency>
   </dependencies>
 
   <build>
@@ -173,6 +189,8 @@
         <artifactId>maven-surefire-plugin</artifactId>
         <version>${maven-surefire-plugin.version}</version>
         <configuration>
+          <parallel>methods</parallel>
+          <threadCount>2</threadCount>
           <suiteXmlFiles>
             <suiteXmlFile>${suite.file.name}</suiteXmlFile>
           </suiteXmlFiles>

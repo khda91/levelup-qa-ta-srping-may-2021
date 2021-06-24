@@ -1,4 +1,4 @@
-package ru.levelup.at.selenium;
+package ru.levelup.at.selenium.base;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -8,7 +8,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import ru.levelup.at.util.SleepUtil;
 
-public class YandexMarketSeleniumDomLocatorsTest extends AbstractSeleniumBaseTest {
+public class YandexMarketSeleniumCssSelectorLocatorTest extends AbstractSeleniumBaseTest {
 
     @BeforeMethod
     @Override
@@ -20,7 +20,8 @@ public class YandexMarketSeleniumDomLocatorsTest extends AbstractSeleniumBaseTes
 
     @Test
     public void idLocatorTest() {
-        WebElement searchTextBox = driver.findElement(By.id("header-search"));
+        // WebElement searchTextBox = driver.findElement(By.id("header-search"));
+        WebElement searchTextBox = driver.findElement(By.cssSelector("#header-search"));
         searchTextBox.sendKeys("iphone");
 
         SleepUtil.sleep(2000);
@@ -33,7 +34,9 @@ public class YandexMarketSeleniumDomLocatorsTest extends AbstractSeleniumBaseTes
 
     @Test
     public void classNameLocatorText() {
-        WebElement searchTextBox = driver.findElement(By.className("nQ8aBP7fBN"));
+        // WebElement searchTextBox = driver.findElement(By.className("nQ8aBP7fBN"));
+        // WebElement searchTextBox = driver.findElement(By.cssSelector("[class='nQ8aBP7fBN']"));
+        WebElement searchTextBox = driver.findElement(By.cssSelector(".nQ8aBP7fBN"));
         searchTextBox.sendKeys("iphone");
 
         SleepUtil.sleep(2000);
@@ -46,7 +49,8 @@ public class YandexMarketSeleniumDomLocatorsTest extends AbstractSeleniumBaseTes
 
     @Test
     public void withMultipleClassNameLocatorText() {
-        WebElement searchButton = driver.findElement(By.className("BQHgUWjkfR"));
+        // WebElement searchButton = driver.findElement(By.className("BQHgUWjkfR"));
+        WebElement searchButton = driver.findElement(By.cssSelector(".BQHgUWjkfR"));
         SleepUtil.sleep(2000);
 
         String actualButtonName = searchButton.getText();
@@ -56,7 +60,8 @@ public class YandexMarketSeleniumDomLocatorsTest extends AbstractSeleniumBaseTes
 
     @Test
     public void nameLocatorTest() {
-        WebElement searchTextBox = driver.findElement(By.name("text"));
+        // WebElement searchTextBox = driver.findElement(By.name("text"));
+        WebElement searchTextBox = driver.findElement(By.cssSelector("[name='text']"));
         searchTextBox.sendKeys("iphone");
 
         SleepUtil.sleep(2000);
@@ -68,33 +73,22 @@ public class YandexMarketSeleniumDomLocatorsTest extends AbstractSeleniumBaseTes
     }
 
     @Test
-    public void linkTextLocatorTest() {
-        WebElement link = driver.findElement(By.linkText("Электроника"));
+    public void otherAttributeLocatorTest() {
+        WebElement searchButton = driver.findElement(By.cssSelector("[data-r='search-button']"));
+        SleepUtil.sleep(2000);
+
+        String actualButtonName = searchButton.getText();
+
+        assertThat(actualButtonName).containsIgnoringCase("Найти");
+    }
+
+    @Test
+    public void combinedCssLocatorTest() {
+        WebElement link = driver.findElement(By.cssSelector("[data-zone-name='category-link'] a span"));
 
         SleepUtil.sleep(2000);
         String actualLinkText = link.getText();
 
-        assertThat(actualLinkText).isEqualTo("Электроника");
-    }
-
-    @Test
-    public void partialLinkTextLocatorTest() {
-        WebElement link = driver.findElement(By.partialLinkText("Электр"));
-
-        SleepUtil.sleep(2000);
-        String actualLinkText = link.getText();
-
-        assertThat(actualLinkText).isEqualTo("Электроника");
-    }
-
-    @Test
-    public void tagNameLocatorTest() {
-        var elements = driver.findElements(By.tagName("div"));
-
-        SleepUtil.sleep(2000);
-
-        assertThat(elements).hasSizeGreaterThan(10);
-
-        System.out.println("div count -> " + elements.size());
+        assertThat(actualLinkText).isEqualTo("Экспресс");
     }
 }

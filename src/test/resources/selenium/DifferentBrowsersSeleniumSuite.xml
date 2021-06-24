@@ -3,7 +3,7 @@
 
   <test name="Different browsers">
     <classes>
-      <class name="ru.levelup.at.selenium.YandexMarketSimpleTest"/>
+      <class name="ru.levelup.at.selenium.base.YandexMarketSimpleTest"/>
     </classes>
   </test>
 

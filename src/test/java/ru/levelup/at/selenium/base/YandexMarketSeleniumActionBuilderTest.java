@@ -1,4 +1,4 @@
-package ru.levelup.at.selenium;
+package ru.levelup.at.selenium.base;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.openqa.selenium.By.className;
@@ -35,8 +35,6 @@ public class YandexMarketSeleniumActionBuilderTest extends AbstractSeleniumBaseT
 
     @Test
     public void addProductToCompareListTest() {
-        List<String> expectedTitles = new ArrayList<>();
-
         wait.until(elementToBeClickable(xpath("//span[text() = 'Электроника']"))).click();
         wait.until(elementToBeClickable(linkText("Смартфоны"))).click();
 
@@ -57,6 +55,7 @@ public class YandexMarketSeleniumActionBuilderTest extends AbstractSeleniumBaseT
             .click()
             .perform();
 
+        List<String> expectedTitles = new ArrayList<>();
         expectedTitles.add(productCardTitle);
 
         productCard = productCards.get(1);
