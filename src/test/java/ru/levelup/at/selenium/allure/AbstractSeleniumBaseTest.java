@@ -3,6 +3,7 @@ package ru.levelup.at.selenium.allure;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.ITestContext;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -26,9 +27,11 @@ public abstract class AbstractSeleniumBaseTest {
     @BeforeMethod
     public void setUp(ITestContext testContext) {
         // driver = new ChromeDriver(new ChromeOptions().setHeadless(true));
-        // driver = new ChromeDriver(new ChromeOptions().addArguments("--headless"));
+        // driver = new ChromeDriver();
 
-        driver = new ChromeDriver();
+        boolean headless = Boolean.parseBoolean(System.getProperty("headless.browser", "false"));
+
+        driver = new ChromeDriver(new ChromeOptions().setHeadless(headless));
         driver.manage().window().maximize();
         testContext.setAttribute("web.driver", driver);
 
