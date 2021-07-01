@@ -3,6 +3,7 @@
 
   <listeners>
     <listener class-name="ru.levelup.at.selenium.allure.listeners.AllureAttachmentListener"/>
+    <listener class-name="ru.levelup.at.selenium.allure.listeners.AnnotationTransformer"/>
   </listeners>
 
   <test name="Allure example">

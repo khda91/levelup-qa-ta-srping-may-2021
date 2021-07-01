@@ -12,6 +12,7 @@ import org.testng.annotations.Test;
 @Feature("Some feature 1")
 public class YandexMarketSearchTest extends AbstractSeleniumBaseTest {
 
+    // @Test(description = "Поиск товара", retryAnalyzer = RetryAnalyzer.class)
     @Test(description = "Поиск товара")
     @Description("Тестирование поискового движка на Яндекс.Маркете")
     @TmsLinks({@TmsLink("TST-2"), @TmsLink("TST-3")})
