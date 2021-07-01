@@ -1,6 +1,10 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name="Allure suite">
 
+  <listeners>
+    <listener class-name="ru.levelup.at.selenium.allure.listeners.AllureAttachmentListener"/>
+  </listeners>
+
   <test name="Allure example">
     <packages>
       <package name="ru.levelup.at.selenium.allure"/>
