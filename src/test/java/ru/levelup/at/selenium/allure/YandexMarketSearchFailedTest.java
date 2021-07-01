@@ -16,6 +16,6 @@ public class YandexMarketSearchFailedTest extends AbstractSeleniumBaseTest {
     public void searchTest() {
         actionStep.openYandexMarketIndexPage();
         actionStep.searchProductOnYandexMarket("iPhone");
-        assertionStep.assertThatSearchItemsContainExpectedTextOnProductPage("samsung");
+        assertionStep.assertThatSearchItemsContainExpectedTextOnProductPage("iPhone");
     }
 }

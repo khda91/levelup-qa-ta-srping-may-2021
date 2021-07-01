@@ -29,7 +29,7 @@ public class YandexMarketCompareProductTest extends AbstractSeleniumBaseTest {
     @Story("Some story 2")
     public void addProductsToCompareListFailedTest() {
         actionStep.openYandexMarketIndexPage();
-        actionStep.selectCategoryAndSubcategoryOnYandexMarket("Электроника", "Смартфо");
+        actionStep.selectCategoryAndSubcategoryOnYandexMarket("Электроника", "Смартфоны");
         List<String> expectedProductTitles =
             actionStep.addProductsToCompareListOnYandexMarketProductPage(1, 2, 3);
         assertionStep.assertThatCompareListContainsAllAddedProducts(expectedProductTitles);
