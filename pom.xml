@@ -23,11 +23,14 @@
     <allure.version>2.14.0</allure.version>
     <javafaker.version>1.0.2</javafaker.version>
     <aspectj.version>1.9.6</aspectj.version>
+    <rest-assured.version>4.4.0</rest-assured.version>
 
     <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
     <maven-checkstyle-plugin.version>3.1.2</maven-checkstyle-plugin.version>
     <maven-surefire-plugin.version>3.0.0-M5</maven-surefire-plugin.version>
     <allure-maven-plugin.version>2.10.0</allure-maven-plugin.version>
+    <jackson-databind.version>2.12.3</jackson-databind.version>
+    <lombok.version>1.18.20</lombok.version>
   </properties>
 
   <profiles>
@@ -162,6 +165,26 @@
       <artifactId>allure-testng</artifactId>
       <version>${allure.version}</version>
     </dependency>
+
+    <dependency>
+      <groupId>io.rest-assured</groupId>
+      <artifactId>rest-assured</artifactId>
+      <version>${rest-assured.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>${jackson-databind.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>${lombok.version}</version>
+      <scope>provided</scope>
+    </dependency>
+
   </dependencies>
 
   <build>
