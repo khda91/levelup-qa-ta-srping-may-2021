@@ -102,6 +102,17 @@
         <suite.file.name>${project.basedir}/src/test/resources/selenium/AllureSeleniumSuite.xml</suite.file.name>
       </properties>
     </profile>
+
+    <profile>
+      <id>web-driver-factory-selenium-suite</id>
+      <activation>
+        <activeByDefault>false</activeByDefault>
+      </activation>
+
+      <properties>
+        <suite.file.name>${project.basedir}/src/test/resources/design/patterns/WebDriverFactorySeleniumSuite.xml</suite.file.name>
+      </properties>
+    </profile>
   </profiles>
 
   <dependencies>
